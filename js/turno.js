@@ -27,8 +27,6 @@ function solicitarTurno(nombre, apellido, turnoSeleccionado) {
 
     alert(`Turno registrado con exito!\nInformacion de su turno:\nNombre: ${turno.nombre}\nApellido: ${turno.apellido}\nFecha: ${turno.fecha}\nHora: ${turno.hora}\nEspecialidad: ${turno.especialidad}`)
 
-    console.log(turno )
-
 }
 
 function buscarTurno(id) {

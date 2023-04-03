@@ -16,3 +16,5 @@ do {
 
 const promedioTiempoEspera = totalTiempoEspera / numTurnos;
 alert("Se registraron " + numTurnos + " turnos. El tiempo de espera promedio fue de " + promedioTiempoEspera + " minutos.");
+
+

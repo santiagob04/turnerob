@@ -26,27 +26,27 @@ main {
 #turnos h2, #nuevo-turno h2 {
     margin-bottom: 1rem;
 }
-#lista-turnos {
+.listado-turnos {
     list-style: none;
     margin: 0;
     padding: 0;
 }
-#lista-turnos li {
+.listado-turnos li {
     border: 1px solid #ccc;
     margin-bottom: 1rem;
     padding: 1rem;
 }
-#lista-turnos li span {
+.listado-turnos li span {
     font-weight: bold;
 }
-#lista-turnos li button {
+.listado-turnos li button {
     background-color: #0074D9;
     border: none;
     color: #fff;
     cursor: pointer;
     padding: 0.5rem;
 }
-#lista-turnos li button:hover {
+.listado-turnos li button:hover {
     background-color: #005CA9;
 }
 #nuevo-turno form {

@@ -1,27 +1,25 @@
 // Obtener la referencia al elemento de la lista en el DOM
 const listaTurnos = document.getElementById("lista-turnos");
 
+let turnosDisponibles = []
+
 // Obtener los turnos disponibles del archivo JSON y agregarlos a la lista en el DOM
 fetch('./turno.json')
     .then(response => response.json())
     .then(turnos => {
-        const turnosDisponibles = turnos.turnosDisponibles;
-
-        turnosDisponibles.forEach(turno => {
-            // Crear un elemento de lista y agregarle los datos del turno
-            const li = document.createElement("li");
-            li.innerHTML = `${turno.especialidad} - ${turno.medico} - ${turno.fecha} - ${turno.hora}`;
-
-            // Agregar el elemento de lista a la lista en el DOM
-            listaTurnos.appendChild(li);
-        });
-
+        turnosDisponibles = turnos.turnos;
+       
         // Guardar los turnos disponibles en el almacenamiento local
         localStorage.setItem('turnosDisponibles', JSON.stringify(turnosDisponibles));
 
         // Actualizar la lista de turnos disponibles en el DOM
         actualizarListaTurnosDisponibles();
+    })
+    .catch(error => {
+        console.log(error)
     });
+
+   
 
 // Obtener la referencia al formulario en el DOM
 const formularioSolicitud = document.getElementById("formulario-solicitud");
@@ -82,7 +80,7 @@ function actualizarListaTurnosDisponibles() {
     turnosDisponibles.forEach(turno => {
         // Crear un elemento de lista y agregarle los datos del turno
         const li = document.createElement("li");
-        li.innerHTML = `${turno.especialidad} - ${turno.medico} - ${turno.fecha} - ${turno.hora}`;
+        li.innerHTML = `${turno.especialidad} - ${turno.fecha} - ${turno.hora}`;
 
         // Agregar el elemento de lista a la lista en el DOM
         listaTurnos.appendChild(li);
